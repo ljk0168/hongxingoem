@@ -1,0 +1,23 @@
+# NAME: Emby 补充规则
+# 需要走代理的 Emby 服务的相关规则
+#第三方emby服务器
+
+# > MisakaF白天可直连，可代理
+DOMAIN-SUFFIX,misakaf.org
+DOMAIN-SUFFIX,cfprefer3.xyz
+IP-CIDR,104.26.10.170/32,no-resolve
+IP-CIDR,104.26.11.170/32,no-resolve
+IP-CIDR,172.67.75.167/32,no-resolve
+IP-CIDR,67.209.53.99/32,no-resolve
+IP-CIDR,208.91.107.189/32,no-resolve
+IP-CIDR,74.118.142.188/32,no-resolve
+
+# > alphatv海外服仅代理
+DOMAIN-SUFFIX,alphatvapp.top
+IP-CIDR,107.181.238.190/32,no-resolve
+IP-CIDR,146.56.170.204/32,no-resolve
+
+# > Levilde Luminia仅代理
+DOMAIN,eggtartemby.itsmyduty.top
+IP-CIDR,188.253.112.89/32,no-resolve
+
