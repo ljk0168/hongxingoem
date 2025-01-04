@@ -235,6 +235,7 @@ rule-providers:
   Twitter: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.list" }
   Netflix: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.list" }
   Emby: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Emby/Emby.list" }
+  Emby: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/ljk0168/hongxingoem/refs/heads/main/rules/emby.list?token=GHSAT0AAAAAAC2FJXLCK6KPIS5P4VJNZHQEZ3YWWIA" }
   steamCN: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.list" }
   PayPal: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PayPal/PayPal.list" }
   Microsoft: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.list" }
