@@ -166,6 +166,7 @@ proxy-groups:
   - {name: 🧸 myTVSUPER, <<: *pr}
   - {name: 🎥 NETFLIX, <<: *pr}
   - {name: 🎥 Emby, <<: *pr}
+  - {name: 🎻 Spotify, <<: *pr}
   - {name: 💶 PayPal, <<: *pr}
   - {name: 🍎 Apple, <<: *pr}
   - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择, 🌐 全部节点]}
@@ -202,6 +203,7 @@ rules:
   - RULE-SET,Twitter,🧸 myTVSUPER
   - RULE-SET,Netflix,🎥 NETFLIX
   - RULE-SET,Emby,🎥 Emby
+  - RULE-SET,Spotify,🎻 Spotify
   - RULE-SET,ChinaMedia,🎯 全球直连
   - RULE-SET,GlobalMedia,🚀 节点选择
   - RULE-SET,steam,🎮️ Steam
@@ -238,6 +240,7 @@ rule-providers:
   Netflix: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.list" }
   Emby: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Emby/Emby.list" }
   Emby: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/ljk0168/clashmoban2/refs/heads/main/rule/emby.list" }
+  Spotify: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list" }
   steamCN: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.list" }
   PayPal: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PayPal/PayPal.list" }
   Microsoft: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.list" }
