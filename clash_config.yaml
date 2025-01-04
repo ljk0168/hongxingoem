@@ -182,8 +182,8 @@ proxy-groups:
 
 rules:
   - RULE-SET,Lan,🎯 全球直连
-  - RULE-SET,direct,🎯 全球直连
   - RULE-SET,Custom_Direct,🎯 全球直连
+  - RULE-SET,direct,🎯 全球直连
   - RULE-SET,FCM,📢 谷歌FCM
   - RULE-SET,googleCN,🎯 全球直连
   - RULE-SET,GoogleCNProxyIP,🚀 节点选择
