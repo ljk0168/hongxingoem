@@ -200,7 +200,7 @@ rules:
   - RULE-SET,Google,🍀 Google
   - RULE-SET,TikTok,🎵 TikTok
   - RULE-SET,Twitter,🕊️ Twitter
-  - RULE-SET,Twitter,🧸 myTVSUPER
+  - RULE-SET,myTVSUPER,🧸 myTVSUPER
   - RULE-SET,Netflix,🎥 NETFLIX
   - RULE-SET,Emby,🎥 Emby
   - RULE-SET,Spotify,🎻 Spotify
@@ -219,7 +219,7 @@ rules:
   - MATCH,🐟 漏网之鱼
 
 rule-anchor:
-  lin: &lin { type: http, interval: 86400, behavior: classical, format: text }
+  ljk: &ljk { type: http, interval: 86400, behavior: classical, format: text }
   ACL4SSR: &ACL4SSR { type: http, interval: 86400, behavior: classical, format: text }
   blackmatrix7: &blackmatrix7 { type: http, interval: 86400, behavior: classical, format: text }
 rule-providers:
@@ -231,7 +231,7 @@ rule-providers:
   Copilot: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Copilot/Copilot.list" }
   Youtube: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.list" }
   Google: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.list" }
-  steamCDN: { <<: *lin, url: "https://raw.githubusercontent.com/linhaixueyuan3/guizeji/refs/heads/main/rule/Steam_CDN.list" }
+  steamCDN: { <<: *ljk, url: "https://raw.githubusercontent.com/ljk0168/clashmoban2/refs/heads/main/rule/Steam_CDN.list" }
   steam: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.list" }
   github: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list" }
   telegram: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.list" }
