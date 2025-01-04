@@ -5,8 +5,8 @@
 
 
 # 锚点
-pr: &pr {type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇸🇬 加坡节点, 🇰🇷 韩国节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
-pe: &pe {type: select, proxies: [🟢 直连, 🚀 节点选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇸🇬 加坡节点, 🇰🇷 韩国节点, 🇺🇲 美国节点, 🌐 全部节点]}
+pr: &pr {type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇸🇬 加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
+pe: &pe {type: select, proxies: [🟢 直连, 🚀 节点选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇸🇬 加坡节点, 🇺🇲 美国节点, 🌐 全部节点]}
 
 # 机场订阅
 proxy-providers:
@@ -149,7 +149,7 @@ proxies:
 
 # 策略组
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇸🇬 加坡节点, 🇰🇷 韩国节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
+  - {name: 🚀 节点选择, type: select, proxies: [🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇸🇬 加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
 
   - {name: 📹 YouTube, <<: *pr}
   - {name: 🍀 Google, <<: *pr}
@@ -174,7 +174,6 @@ proxy-groups:
   - {name: 🇨🇳 台湾节点, type: select, include-all: true, filter: "(?i)台湾|twn|taiwan|台北|高雄" }
   - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日本|jp|japan" }
   - {name: 🇸🇬 加坡节点, type: select, include-all: true, filter: "(?i)新加坡|sg|singapore" }
-  - {name: 🇰🇷 韩国节点, type: select, include-all: true, filter: "(?i)韩国|kr|korea" }
   - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美国|us|united states|united states" }
   - {name: 🌐 全部节点, type: select, include-all: true}
     
