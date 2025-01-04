@@ -223,7 +223,10 @@ rule-anchor:
   ACL4SSR: &ACL4SSR { type: http, interval: 86400, behavior: classical, format: text }
   blackmatrix7: &blackmatrix7 { type: http, interval: 86400, behavior: classical, format: text }
 rule-providers:
- 
+
+  Lan: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.list" }
+  direct: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.list" }
+  Custom_Direct: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.list" }
   FCM: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.list" }
   googleCN: { <<: *ACL4SSR, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/GoogleCN.list" }
   GoogleCNProxyIP: { <<: *ACL4SSR, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/GoogleCNProxyIP.list" }
