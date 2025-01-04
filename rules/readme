@@ -7,3 +7,5 @@
 | Custom_Direct.list | 强制直连域名规则 |
 | Custom_Proxy.list | 强制代理域名规则 |
 | Steam_CDN.list | Steam 国内下载 CDN 地址规则 |
+| emby.list | 需要走代理的 Emby 第三方emby服务器的相关规则 |
+
