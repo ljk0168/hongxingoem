@@ -1,0 +1,128 @@
+#由红杏机场修改而来
+# 日期：2025-01-05
+# 适用版本：适配使用openclash内核的程序
+
+
+# 锚点
+pr: &pr {type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇸🇬 加坡节点, 🇰🇷 韩国节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
+pe: &pe {type: select, proxies: [🟢 直连, 🚀 节点选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇸🇬 加坡节点, 🇰🇷 韩国节点, 🇺🇲 美国节点, 🌐 全部节点]}
+
+
+proxies:
+  - name: "🟢 直连"
+    type: direct
+    udp: true
+
+# 策略组
+proxy-groups:
+  - {name: 🚀 节点选择, type: select, proxies: [🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇸🇬 加坡节点, 🇰🇷 韩国节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
+
+  - {name: 📹 YouTube, <<: *pr}
+  - {name: 🍀 Google, <<: *pr}
+  - {name: 🎮️ SteamCN, <<: *pe}
+  - {name: 🎮️ Steam, <<: *pr}
+  - {name: 🤖 OpenAi, <<: *pr}
+  - {name: Ⓜ️ Copilot, <<: *pr}
+  - {name: 📢 谷歌FCM, <<: *pr}
+  - {name: 👨🏿‍💻 GitHub, <<: *pr}
+  - {name: 🪟 Microsoft, <<: *pe}
+  - {name: 🎵 TikTok, <<: *pr}
+  - {name: 📲 Telegram, <<: *pr}
+  - {name: 🕊️ Twitter, <<: *pr}
+  - {name: 🧸 myTVSUPER, <<: *pr}
+  - {name: 🎥 NETFLIX, <<: *pr}
+  - {name: 🎥 Emby, <<: *pr}
+  - {name: 🎻 Spotify, <<: *pr}
+  - {name: 💶 PayPal, <<: *pr}
+  - {name: 🍎 Apple, <<: *pr}
+  - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择, 🌐 全部节点]}
+  - {name: 🐟 漏网之鱼, <<: *pr}
+
+  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)香港|hk|hongkong|hong kong" }
+  - {name: 🇨🇳 台湾节点, type: select, include-all: true, filter: "(?i)台湾|twn|taiwan|台北|高雄" }
+  - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日本|jp|japan" }
+  - {name: 🇸🇬 加坡节点, type: select, include-all: true, filter: "(?i)新加坡|sg|singapore" }
+  - {name: 🇰🇷 韩国节点, type: select, include-all: true, filter: "(?i)韩国|kr|korea" }
+  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美国|us|united states|united states" }
+  - {name: 🌐 全部节点, type: select, include-all: true}
+    
+  
+
+rules:
+  - RULE-SET,Lan,🎯 全球直连
+  - RULE-SET,direct,🎯 全球直连
+  - RULE-SET,Custom_Direct,🎯 全球直连
+  - RULE-SET,Custom_Proxy,🚀 节点选择
+  - RULE-SET,FCM,📢 谷歌FCM
+  - RULE-SET,googleCN,🎯 全球直连
+  - RULE-SET,GoogleCNProxyIP,🚀 节点选择
+  - RULE-SET,steamCN,🎮️ SteamCN
+  - RULE-SET,steamCDN,🎮️ SteamCN
+  - RULE-SET,telegram,📲 Telegram
+  - RULE-SET,OpenAi,🤖 OpenAi
+  - RULE-SET,Copilot,Ⓜ️ Copilot
+  - RULE-SET,github,👨🏿‍💻 GitHub
+  - RULE-SET,Apple,🍎 Apple
+  - RULE-SET,Microsoft,🪟 Microsoft
+  - RULE-SET,Youtube,📹 YouTube
+  - RULE-SET,Google,🍀 Google
+  - RULE-SET,TikTok,🎵 TikTok
+  - RULE-SET,Twitter,🕊️ Twitter
+  - RULE-SET,myTVSUPER,🧸 myTVSUPER
+  - RULE-SET,Netflix,🎥 NETFLIX
+  - RULE-SET,Emby,🎥 Emby
+  - RULE-SET,Spotify,🎻 Spotify
+  - RULE-SET,ChinaMedia,🎯 全球直连
+  - RULE-SET,GlobalMedia,🚀 节点选择
+  - RULE-SET,steam,🎮️ Steam
+  - RULE-SET,ProxyGFWlist,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - RULE-SET,ChinaIp,🎯 全球直连
+  - RULE-SET,Download,🎯 全球直连
+  - RULE-SET,PayPal,💶 PayPal
+  - GEOSITE,CN,🎯 全球直连
+  - GEOIP,Lan,🎯 全球直连,no-resolve
+  - GEOIP,CN,🎯 全球直连,no-resolve
+  - MATCH,🐟 漏网之鱼
+
+rule-anchor:
+  ljk: &ljk { type: http, interval: 86400, behavior: classical, format: text }
+  ACL4SSR: &ACL4SSR { type: http, interval: 86400, behavior: classical, format: text }
+  blackmatrix7: &blackmatrix7 { type: http, interval: 86400, behavior: classical, format: text }
+rule-providers:
+
+  Lan: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.list" }
+  direct: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.list" }
+  Custom_Direct: { <<: *ljk, url: "https://raw.githubusercontent.com/ljk0168/hongxingoem/refs/heads/main/rules/Custom_Direct.list" }
+  Custom_Proxy: { <<: *ljk, url: "https://raw.githubusercontent.com/ljk0168/hongxingoem/refs/heads/main/rules/Custom_Proxy.list" }
+  FCM: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.list" }
+  googleCN: { <<: *ACL4SSR, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/GoogleCN.list" }
+  GoogleCNProxyIP: { <<: *ACL4SSR, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/GoogleCNProxyIP.list" }
+  OpenAi: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.list" }
+  Copilot: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Copilot/Copilot.list" }
+  Youtube: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.list" }
+  Google: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.list" }
+  steamCDN: { <<: *ljk, url: "https://raw.githubusercontent.com/ljk0168/clashmoban2/refs/heads/main/rule/Steam_CDN.list" }
+  steam: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.list" }
+  github: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list" }
+  telegram: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.list" }
+  Twitter: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.list" }
+  myTVSUPER: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/myTVSUPER/myTVSUPER.list" }
+  Netflix: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.list" }
+  Emby: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Emby/Emby.list" }
+  Emby: { <<: *ljk, url: "https://raw.githubusercontent.com/ljk0168/hongxingoem/refs/heads/main/rules/emby.list" }
+  Spotify: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list" }
+  steamCN: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.list" }
+  PayPal: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PayPal/PayPal.list" }
+  Microsoft: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.list" }
+  Apple: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple.list" }
+  TikTok: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list" }
+  ProxyGFWlist: { <<: *ACL4SSR, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list" }
+  ChinaMedia: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMedia/ChinaMedia.list" }
+  GlobalMedia: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMedia/ChinaMedia.list" }
+  ChinaDomain: { <<: *ACL4SSR, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaDomain.list" }
+  ChinaCompanyIp: { <<: *ACL4SSR, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaCompanyIp.list" }
+  ChinaIp: { <<: *ACL4SSR, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaIp.list" }
+  Download: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Download/Download.list" }
+
