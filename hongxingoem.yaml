@@ -163,6 +163,7 @@ proxy-groups:
   - {name: 🎵 TikTok, <<: *pr}
   - {name: 📲 Telegram, <<: *pr}
   - {name: 🕊️ Twitter, <<: *pr}
+  - {name: 🧸 myTVSUPER, <<: *pr}
   - {name: 🎥 NETFLIX, <<: *pr}
   - {name: 🎥 Emby, <<: *pr}
   - {name: 💶 PayPal, <<: *pr}
@@ -198,6 +199,7 @@ rules:
   - RULE-SET,Google,🍀 Google
   - RULE-SET,TikTok,🎵 TikTok
   - RULE-SET,Twitter,🕊️ Twitter
+  - RULE-SET,Twitter,🧸 myTVSUPER
   - RULE-SET,Netflix,🎥 NETFLIX
   - RULE-SET,Emby,🎥 Emby
   - RULE-SET,ChinaMedia,🎯 全球直连
@@ -232,9 +234,10 @@ rule-providers:
   github: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list" }
   telegram: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.list" }
   Twitter: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.list" }
+  myTVSUPER: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/myTVSUPER/myTVSUPER.list" }
   Netflix: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.list" }
   Emby: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Emby/Emby.list" }
-  Emby: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/ljk0168/hongxingoem/refs/heads/main/rules/emby.list?token=GHSAT0AAAAAAC2FJXLCK6KPIS5P4VJNZHQEZ3YWWIA" }
+  Emby: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/ljk0168/clashmoban2/refs/heads/main/rule/emby.list" }
   steamCN: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.list" }
   PayPal: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PayPal/PayPal.list" }
   Microsoft: { <<: *blackmatrix7, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.list" }
